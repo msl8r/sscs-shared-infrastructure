@@ -13,6 +13,7 @@ resource "azurerm_key_vault_secret" "app_insights_key" {
   name         = "AppInsightsInstrumentationKey"
   value        = azurerm_application_insights.appinsights.instrumentation_key
   key_vault_id = module.sscs-vault.key_vault_id
+  sensitive = true
 }
 
 output "appInsightsInstrumentationKey" {
